@@ -1,7 +1,7 @@
 # jackengle.net
 My personal portfolio website 🧑‍💻
 
-This codebase is built on top of the [SvelteKit starter app](https://kit.svelte.dev/docs/creating-a-project).
+This codebase is built on top of the [SvelteKit starter app](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
 Website Features
 - Contact Form with automated submission e-mails via Airtable API POSTing
