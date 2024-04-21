@@ -1,0 +1,66 @@
+@import '@fontsource/fira-mono';
+
+:root {
+	--font-body: Roboto, sans-serif;
+	--font-mono: 'Fira Mono', monospace;
+	font-family: var(--font-body);
+	color: var(--color-text);
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-attachment: fixed;
+	color: rgb(255, 255, 255);
+	background-size: 100vw 100vh;
+}
+
+h1,
+h2,
+p {
+	font-weight: 400;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+
+
+
+.text-column {
+	display: flex;
+	max-width: 48rem;
+	flex: 0.3;
+	flex-direction: column;
+	justify-content: left;
+	margin: 0 auto;
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
