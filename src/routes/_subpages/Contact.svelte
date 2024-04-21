@@ -5,7 +5,7 @@
 	const submit = async (event: Event) => {
 		submitted = 1;
 		const data = Object.fromEntries(new FormData(event.target as HTMLFormElement));
-		const resp = await fetch(process.env.URL + '/api/contact',
+		const resp = await fetch(import.meta.env.VITE_URL + '/api/contact',
 			{
 				method: "POST",
 				headers: {
