@@ -3,7 +3,7 @@ import { json } from "@sveltejs/kit";
 export async function POST({ request, cookies }) {
     const { name, email, message } = await request.json();
 
-    const ENDPOINT = `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/submissions`;
+    const ENDPOINT = `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE_ID}/submissions`;
 
     let body = {
         records: [
@@ -20,7 +20,7 @@ export async function POST({ request, cookies }) {
         {
             method: "POST",
             headers: {
-                'Authorization': `Bearer ${process.env.AIRTABLE_API_KEY}`,
+                'Authorization': `Bearer ${import.meta.env.VITE_AIRTABLE_API_KEY}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(body)
