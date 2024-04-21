@@ -11,7 +11,7 @@
 
 		%sveltekit.head%
 		<script>
-			if(localStorage.theme == "dark") document.documentElement.style.backgroundImage = 'linear-gradient(#1a1a1a, #080808)';
+			if(!('theme' in localStorage) || localStorage.theme == "dark") document.documentElement.style.backgroundImage = 'linear-gradient(#1a1a1a, #080808)';
 			else {
 				document.documentElement.style.backgroundImage = 'linear-gradient(#f1f1f1, #d1d1d1)';
 			}
