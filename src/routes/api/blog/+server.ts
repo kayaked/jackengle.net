@@ -5,7 +5,7 @@ import type { BlogPost } from '$lib/types';
 export async function GET() {
     let posts: BlogPost[] = [];
 
-    const paths = import.meta.glob('/src/lib/posts/*.md', {eager: true});
+    const paths = import.meta.glob('/posts/*.md', {eager: true});
 
     for(const path in paths) {
         const file = paths[path];
