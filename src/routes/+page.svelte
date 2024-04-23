@@ -37,13 +37,14 @@
 			component: Contact
 		}
 	]
+
 	// dark/light mode loads
     if(localStorage.theme == "light" || (!('theme' in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
         document.documentElement.classList.remove('dark');
-        localStorage.theme = 'light';
+        localStorage.setItem('theme', 'light');
     } else {
         document.documentElement.classList.add('dark');
-        localStorage.theme = 'dark';
+        localStorage.setItem('theme', 'dark');
     }
 	onMount(() => {
 		tippy('#github-icon', { content: 'GitHub'});

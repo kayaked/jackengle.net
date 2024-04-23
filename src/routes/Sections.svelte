@@ -7,6 +7,7 @@
     export let tabActive = storedTab ? storedTab : 'home';
 	if(storedTab && storedTab != 'home') {
 		window.history.pushState({urlPath: `/${storedTab}`}, '', `/${storedTab}`);
+		localStorage.setItem('tabReIndex', 'home')
 	}
 
 	let blurDelay = 0;
@@ -17,7 +18,6 @@
 			if(tabActive == tabs[tab].label) {
 				let shallow = `/${tabs[tab].label == 'home' ? '' : tabs[tab].label}`;
 				window.history.pushState({urlPath: shallow}, '', shallow);
-				localStorage.setItem('tabReIndex', tabs[tab].label);
 			}
 		}
 		
