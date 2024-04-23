@@ -11,6 +11,7 @@
         localStorage.theme = 'dark';
     }
 export let data;
+console.log(data);
 </script>
 
 <svelte:head>
