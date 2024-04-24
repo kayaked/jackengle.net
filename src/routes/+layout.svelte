@@ -21,7 +21,7 @@
 	
 
 	{#if mnt}
-	<main class="flex flex-col flex-1 px-4 w-full max-w-[50rem] my-0 mx-auto box-border" id="mainwrapper" transition:blur={{ amount: 10, duration: 300}}>
+	<main class="flex flex-col flex-1 md:px-4 w-full max-w-[50rem] my-0 mx-auto box-border" id="mainwrapper" transition:blur={{ amount: 10, duration: 300}}>
 		<slot />
 	</main>
 	{/if}

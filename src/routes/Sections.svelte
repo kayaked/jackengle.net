@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Icon from '@iconify/svelte';
 	let storedTab = localStorage.tabReIndex;
     /**
      * @type {any[]}
@@ -46,10 +47,13 @@
         </ul>
     </nav>
 </div>
+<div class="flex items-center md:hidden h-14 bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3">
+    <Icon icon="mdi:hamburger-menu" class="text-4xl cursor-pointer"/>
+</div>
 <br>
 {#each tabs as tab}
     {#if tabActive == tab.label}
-    <div>
+    <div class="md:px-0 px-2">
         <svelte:component this={tab.component}/>
     </div>
     {/if}

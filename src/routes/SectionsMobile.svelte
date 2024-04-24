@@ -1,5 +1,6 @@
 <script lang="ts">
     export let active = false;
+    export let tabs: any[] = [];
 </script>
 
 <aside>
