@@ -25,11 +25,11 @@
     // https://svelte.dev/repl/cf05bd4a4ca14fb8ace8b6cdebbb58da?version=4.2.12
 </script>
 
-<nav class="backdrop-blur-sm bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 rounded-lg w-8/12 text-gray-900 dark:text-white">
-    <ul class="mx-3">
+<nav class="w-auto mx-5 md:mx-0 hidden backdrop-blur-sm bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 md:flex rounded-lg md:w-8/12 text-gray-900 dark:text-white p-navbar justify-center">
+    <ul class="mx-3 p-0 m-0 h-12 flex justify-center align-center list-none bg-contain">
         {#each tabs as tab}
         <li
-            class={tabActive === tab.label ? 'active' : ''}
+            class={(tabActive === tab.label ? 'active ' : '') + 'h-full px-[0.5rem]'}
             style={tab.label === 'home' ? "padding-left: 0.25rem;" : ''} 
         >
             <span
@@ -37,7 +37,7 @@
 				on:keydown={tabClickHandler(tab.label)}
 				role="link"
 				tabindex="0"
-				class="{tabActive === tab.label ? 'font-medium drop-shadow' : 'font-normal'} hover:drop-shadow"
+				class="{tabActive === tab.label ? 'font-medium drop-shadow' : 'font-normal'} hover:drop-shadow flex h-full align-center "
 			>{tab.label}</span>
         </li>
         {/each}
@@ -54,30 +54,8 @@
 
 <style>
 
-	nav {
-		display: flex;
-		justify-content: center;
-		padding: 0.3rem 2rem;
-	}
 
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
 
-	li {
-		position: relative;
-		height: 100%;
-		padding: 0 0.5rem;
-	}
 
 	nav span {
 		display: flex;

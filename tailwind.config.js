@@ -8,6 +8,10 @@ export default {
         'bg-gr-2': '#080808',
         'bg-gr-1l': '#f1f1f1',
         'bg-gr-2l': '#d1d1d1'
+      },
+      padding: {
+        '.7': '0.7rem',
+        'navbar': '0.3rem 2rem'
       }
     },
   },

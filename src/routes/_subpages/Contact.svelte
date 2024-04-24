@@ -48,7 +48,11 @@
 		</div>
 		<span class="text-black/80 dark:text-white/80 leading-7">
 			<p class="mb-2">Reach out by leaving a message!</p>
-			<p>Alternatively, you can email me at <a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="mailto:jackengle25@gmail.com">jackengle25@gmail.com</a>, connect with me on <a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="https://www.linkedin.com/in/john--engle/">LinkedIn</a>, or follow me on <a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="https://github.com/kayaked">GitHub</a>.</p>
+			<p>Alternatively, you can email me at 
+				<a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="mailto:jackengle25@gmail.com">jackengle25@gmail.com</a>, connect with me on 
+				<a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="https://www.linkedin.com/in/john--engle/">LinkedIn</a>, or follow me on 
+				<a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="https://github.com/kayaked">GitHub</a>.
+			</p>
 			<img src={dolly} class="max-w-64 md:max-w-full m-auto h-auto mt-3 rounded-lg brightness-75" alt="Dog"/>
 		</span>
 	</div>

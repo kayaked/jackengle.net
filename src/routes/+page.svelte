@@ -58,11 +58,11 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="mt-3">
+<section class="mt-3 flex flex-col justify-center flex-[0.6] opacity-90">
 	<br><br>
 	<div class="flex justify-between">
 		<a href="/">
-			<h1 class="invisible md:visible mb-4 pointer text-black dark:text-white">
+			<h1 class="invisible md:visible mb-4 pointer text-black dark:text-white text-[3rem] font-bold">
 				Jack Engle
 			</h1>
 		</a>
@@ -88,26 +88,6 @@
 
 <style>
 
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: left;
-		flex: 0.6;
-		opacity: 0.9;
-	}
-
-	h1 {
-		font-size: 3rem;
-		font-weight: bold;
-	}
-
-	h3 {
-		width: 100%;
-		font-size: 1.25rem;
-		font-weight: normal;
-		margin-block: 0.5em;
-	}
 
 
 	/*.welcome {

@@ -42,9 +42,9 @@
 </script>
 
 <section>
-    <div class="prj-grid px-3">
+    <div class="grid grid-cols-2 px-3 gap-4 justify-between text-neutral-300">
 		{#each projectsList as project}
-		<a href={project.link}><div class="flex flex-col prj-item rounded-lg dark:bg-black/30 bg-black/10 hover:bg-black/20 dark:hover:bg-black/95 text-black dark:text-white">
+		<a href={project.link}><div class="flex flex-col p-.7 transition duration-100 h-32 rounded-lg dark:bg-black/30 bg-black/10 hover:bg-black/20 dark:hover:bg-black/95 text-black dark:text-white">
 			<h3><strong>{project.title}</strong></h3>
 			<p>{project.desc}</p>
 			<div class="flex flex-row inline gap-2 mt-auto ml-1 mb-1">
@@ -56,21 +56,3 @@
 		</a>
 		{/each}
 </section>
-
-<style>
-	
-	.prj-grid {
-		color: #ccc;
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0,1fr));
-		grid-auto-rows: 1fr;
-		justify-content: space-between;
-		gap: 1rem;
-	}
-	
-	.prj-item {
-		padding: 0.7rem;
-		transition: 0.1s;
-		height: 8rem;
-	}
-</style>

@@ -26,7 +26,7 @@
 	</main>
 	{/if}
 
-	<footer class="je-footer md:fixed flex flex-col w-full text-center bottom-1 text-black/30 dark:text-white/30 m-2 select-none">© 2024 Jack Engle • powered by SvelteKit and Bun</footer>
+	<footer class="je-footer invisible md:visible md:fixed flex flex-col w-full text-center bottom-1 text-black/30 dark:text-white/30 m-2 select-none">© 2024 Jack Engle • powered by SvelteKit and Bun</footer>
 </div>
 
 <style>
