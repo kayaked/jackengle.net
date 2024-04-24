@@ -7,12 +7,10 @@
 	import Blog from './_subpages/Blog.svelte';
 	import Contact from './_subpages/Contact.svelte';
 	import Sections from './Sections.svelte';
+	import SectionsMobile from './SectionsMobile.svelte';
+	import Socials from './Socials.svelte';
 	import Home from './_subpages/Home.svelte';
 
-	import ColorMode from './ColorMode.svelte';
-	import tippy from 'tippy.js';
-	import 'tippy.js/dist/tippy.css';
-    import { onMount } from 'svelte';
 
 	// sections object
 	let tabs = [
@@ -46,11 +44,6 @@
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
     }
-	onMount(() => {
-		tippy('#github-icon', { content: 'GitHub'});
-		tippy('#linkedin-icon', { content: 'LinkedIn'});
-		tippy('#email-icon', { content: 'Email'});
-	});
 </script>
 
 <svelte:head>
@@ -58,26 +51,21 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="mt-3 flex flex-col justify-center flex-[0.6] opacity-90">
-	<br><br>
+<section class="hidden md:block mt-3 flex flex-col justify-center flex-[0.6] opacity-90">
+	<br class="hidden md:block"><br class="hidden md:block">
 	<div class="flex justify-between">
 		<a href="/">
-			<h1 class="invisible md:visible mb-4 pointer text-black dark:text-white text-[3rem] font-bold">
+			<h1 class="mb-4 pointer text-black dark:text-white text-[3rem] font-bold">
 				Jack Engle
 			</h1>
 		</a>
 		<div class="text-right my-2">
-			<p class="invisible md:visible text-black/80 dark:text-white/80">
+			<p class="text-black/80 dark:text-white/80">
 				20 y/o computer engineer / student based in <span class="font-semibold">Cincinnati, OH</span>
 				<br>
 			</p>
 			<p class="text-right text-lg flex flex-row-reverse gap-2 my-1  text-black dark:text-white">
-				<a href="#top"><Icon icon="mdi:question-mark-circle-outline" class="text-2xl"/></a>
-				<a href="mailto:jackengle25@gmail.com" id="email-icon"><Icon icon="mdi:email" class="text-2xl"/></a>
-				<a href="https://www.linkedin.com/in/john--engle/" id="linkedin-icon"><Icon icon="mdi:linkedin" class="text-2xl"/></a>
-				<a href="https://github.com/kayaked" id="github-icon"><Icon icon="mdi:github" class="text-2xl"/></a>
-				<span>•</span>
-				<ColorMode/>
+				<Socials/>
 			</p>
 		</div>
 	</div>

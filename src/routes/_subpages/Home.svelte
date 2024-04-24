@@ -17,7 +17,7 @@ import prototype from '$lib/images/prototype.jpg';
                 In the past, I've worked on projects that help communities grow and automate complex processes. Usually I host and link to my projects here, so keep an eye out! 👍
                 </p>
             </div>
-            <img src={prototype} class="md:h-96 mx-8 my-2 brightness-75 rounded-lg w-auto h-auto" alt="Prototype Version of a Wireless Remote"/>
+                <img src={prototype} class="mx-16 mt-6 md:mx-8 md:my-2 md:h-96 brightness-75 rounded-lg w-auto h-auto" alt="Prototype Version of a Wireless Remote"/>    
         </div>
     </div>
 </section>
