@@ -13,6 +13,7 @@
 	let blurDelay = 0;
     
     const tabClickHandler = (/** @type {string} */ tabLabel) => () => {
+		if(tabActive==tabLabel) return;
 		tabActive = tabLabel;
 		for(let tab in tabs) {
 			if(tabActive == tabs[tab].label) {
@@ -29,7 +30,7 @@
     <ul class="mx-3 p-0 m-0 h-12 flex justify-center align-center list-none bg-contain">
         {#each tabs as tab}
         <li
-            class={(tabActive === tab.label ? 'active ' : '') + 'h-full px-[0.5rem]'}
+            class="{(tabActive === tab.label ? 'active' : '')} h-full px-[0.5rem]"
             style={tab.label === 'home' ? "padding-left: 0.25rem;" : ''} 
         >
             <span
@@ -37,7 +38,7 @@
 				on:keydown={tabClickHandler(tab.label)}
 				role="link"
 				tabindex="0"
-				class="{tabActive === tab.label ? 'font-medium drop-shadow' : 'font-normal'} hover:drop-shadow flex h-full align-center "
+				class="{tabActive === tab.label ? 'font-medium drop-shadow cursor-default' : 'font-normal hover:text-white/80 cursor-pointer'} hover:drop-shadow flex h-full items-center px-[0.5rem] no-underline text-[1.2rem] hover:drop-shadow "
 			>{tab.label}</span>
         </li>
         {/each}
@@ -51,24 +52,3 @@
     </div>
     {/if}
 {/each}
-
-<style>
-
-
-
-
-	nav span {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		text-decoration: none;
-		font-size: 1.2rem;
-		transition: color 0.2s linear;
-		cursor: pointer;
-	}
-
-	span:hover {
-		color: var(--color-theme-2);
-	}
-</style>

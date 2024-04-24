@@ -16,34 +16,15 @@
 	})
 </script>
 
-<div class="app" >
+<div class="app flex flex-col" >
 
 	
 
 	{#if mnt}
-	<main class="flex flex-col flex-1 px-4 w-full" id="mainwrapper" transition:blur={{ amount: 10, duration: 300}}>
+	<main class="flex flex-col flex-1 px-4 w-full max-w-[50rem] my-0 mx-auto box-border" id="mainwrapper" transition:blur={{ amount: 10, duration: 300}}>
 		<slot />
 	</main>
 	{/if}
 
-	<footer class="je-footer invisible md:visible md:fixed flex flex-col w-full text-center bottom-1 text-black/30 dark:text-white/30 m-2 select-none">© 2024 Jack Engle • powered by SvelteKit and Bun</footer>
+	<footer class="je-footer invisible md:visible md:fixed flex flex-col w-full text-center bottom-1 text-black/10 dark:text-white/10 m-2 select-none pb-2">© 2024 Jack Engle • powered by SvelteKit and Bun</footer>
 </div>
-
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-	}
-
-	main {
-		max-width: 50rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
