@@ -1,5 +1,7 @@
 <script lang="ts">
     import Icon from '@iconify/svelte';
+    import Socials from './Socials.svelte';
+
 	let storedTab = localStorage.tabReIndex;
     /**
      * @type {any[]}
@@ -49,6 +51,26 @@
 </div>
 <div class="flex items-center md:hidden h-14 bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3">
     <Icon icon="mdi:hamburger-menu" class="text-4xl cursor-pointer"/>
+</div>
+<div class="h-auto w-full absolute bg-black grid grid-cols-2 md:hidden">
+    <nav>
+        <ul>
+            {#each tabs as tab}
+            <li>
+                <span
+                    on:click={tabClickHandler(tab.label)}
+                    on:keydown={tabClickHandler(tab.label)}
+                    role="link"
+                    tabindex="0"
+                    class="{tabActive === tab.label ? 'font-medium drop-shadow cursor-default' : 'font-normal hover:text-black dark:hover:text-white/80 cursor-pointer'} hover:drop-shadow flex h-full items-center px-[0.5rem] no-underline text-[1.2rem] justify-center"
+                >{tab.label}</span>
+            </li>
+            {/each}
+        </ul>
+    </nav>
+    <div class="grid grid-rows-2 grid-cols-2">
+        <Socials/>
+    </div>
 </div>
 <br>
 {#each tabs as tab}
