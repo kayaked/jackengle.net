@@ -12,7 +12,7 @@ onMount(() => {
 });
 </script>
 
-<a href="#top"><Icon icon="mdi:question-mark-circle-outline" class="text-2xl"/></a>
+<!--<a href="#top"><Icon icon="mdi:question-mark-circle-outline" class="text-2xl hidden md:block"/></a>-->
 <a href="mailto:jackengle25@gmail.com" id="email-icon"><Icon icon="mdi:email" class="text-2xl"/></a>
 <a href="https://www.linkedin.com/in/john--engle/" id="linkedin-icon"><Icon icon="mdi:linkedin" class="text-2xl"/></a>
 <a href="https://github.com/kayaked" id="github-icon"><Icon icon="mdi:github" class="text-2xl"/></a>

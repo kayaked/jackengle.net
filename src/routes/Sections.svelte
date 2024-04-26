@@ -10,20 +10,24 @@
      */
     export let tabs: any[] = [];
     export let tabActive = storedTab ? storedTab : 'home';
+    // checks for a current storedtab upon load (tab is set in localStorage upon navigating to a subdomain, as seen in their page.svelte)
 	if(storedTab && storedTab != 'home') {
 		window.history.pushState({urlPath: `/${storedTab}`}, '', `/${storedTab}`);
 		localStorage.setItem('tabReIndex', 'home')
 	}
-
-	let blurDelay = 0;
     
+    // tracks current active page section and controls shallow routing for this component's interacations
     const tabClickHandler = (/** @type {string} */ tabLabel) => {
 		if(tabActive==tabLabel) return;
 		tabActive = tabLabel;
 		for(let tab in tabs) {
 			if(tabActive == tabs[tab].label) {
+                // url path string to be routed to, corresponding to the tab name, or root if homepage tab
 				let shallow = `/${tabs[tab].label == 'home' ? '' : tabs[tab].label}`;
+                // push the route state
 				window.history.pushState({urlPath: shallow}, '', shallow);
+
+                // note: sveltekit has its own features for shallow routing, but they're unavailable in my dev env and js must be enabled regardless
 			}
 		}
 		
@@ -56,7 +60,7 @@
 </script>
 
 <div class="hidden md:block">
-    <nav class="w-auto mx-5 md:mx-0 hidden backdrop-blur-sm bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 md:flex rounded-lg md:w-8/12 text-gray-900 dark:text-white justify-center">
+    <nav class="p-1 w-auto mx-5 md:mx-0 hidden backdrop-blur-sm bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 md:flex rounded-lg md:w-8/12 text-gray-900 dark:text-white justify-center">
         <ul class="mx-3 p-0 m-0 h-12 flex justify-center align-center list-none bg-contain">
             {#each tabs as tab}
             <li
@@ -77,32 +81,36 @@
 </div>
 
 <div class="flex items-center md:hidden h-14 bg-black/5 z-20 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3"  >
-    <div on:click={() => toggleTabbar()}>
+    <div on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()} role="button" tabindex="0">
         <Icon icon="mdi:hamburger-menu" class="text-4xl cursor-pointer" />
     </div>
 </div>
-<div class="hidden h-full w-full absolute bg-neutral-700/0 z-10 fixed md:hidden p-dismissal" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
+<div class="hidden h-full w-full absolute z-10 fixed md:hidden p-dismissal cursor-default" role="button" tabindex="0" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
 
 </div>
-<div class="h-auto w-full absolute top-14 bg-black z-20 hidden grid-cols-2 md:hidden p-navbar">
+<div class="h-auto w-full absolute top-14 bg-neutral-300 dark:bg-neutral-950 z-20 hidden py-5 grid-rows-1 md:hidden p-navbar gap-5">
     <nav>
-        <ul>
+        <ul class="grid gap-3 grid-cols-2">
             {#each tabs as tab}
             <li>
                 <span
                     on:click={tabClickHandler(tab.label)}
+                    on:click={() => toggleTabbar()}
                     on:keydown={tabClickHandler(tab.label)}
+                    on:keydown={() => toggleTabbar()}
                     role="link"
                     tabindex="0"
                     class="{tabActive === tab.label ? 'font-medium drop-shadow cursor-default' : 'font-normal hover:text-black dark:hover:text-white/80 cursor-pointer'} hover:drop-shadow flex h-full items-center px-[0.5rem] no-underline text-[1.2rem] justify-center"
                 >{tab.label}</span>
             </li>
             {/each}
+            <div class="flex justify-center">
+                <div class="grid grid-flow-col auto-cols-max justify-items-center gap-3">
+                    <Socials/>
+                </div>
+            </div>
         </ul>
     </nav>
-    <div class="grid grid-rows-2 grid-cols-2">
-        <Socials/>
-    </div>
 </div>
 <br>
 {#each tabs as tab}

@@ -42,7 +42,7 @@
 </script>
 
 <section>
-    <div class="grid grid-cols-2 px-3 gap-4 justify-between text-neutral-300">
+    <div class="grid grid-cols-1 md:grid-cols-2 px-3 gap-4 justify-between text-neutral-300">
 		{#each projectsList as project}
 		<a href={project.link}><div class="flex flex-col p-.7 transition duration-100 h-32 rounded-lg dark:bg-black/30 bg-black/10 hover:bg-black/20 dark:hover:bg-black/95 text-black dark:text-white">
 			<h3><strong>{project.title}</strong></h3>
