@@ -2,6 +2,8 @@
     import Icon from '@iconify/svelte';
     import Socials from './Socials.svelte';
 
+    let navDisp = 'none';
+
 	let storedTab = localStorage.tabReIndex;
     /**
      * @type {any[]}
@@ -27,9 +29,9 @@
 		
 	}
 
-    const closeTabbar = () => {
+    const toggleTabbar = () => {
         document.querySelectorAll('.p-navbar').forEach((nav) => {
-            nav.style.display = 'none';
+            nav.style.display = nav.style.display != 'none' ? 'none' : 'grid';
         });
     }
     // https://svelte.dev/repl/cf05bd4a4ca14fb8ace8b6cdebbb58da?version=4.2.12
@@ -56,10 +58,12 @@
     </nav>
 </div>
 
-<div class="flex items-center md:hidden h-14 bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3">
-    <Icon icon="mdi:hamburger-menu" class="text-4xl cursor-pointer"/>
+<div class="flex items-center md:hidden h-14 bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3"  >
+    <div on:click={() => toggleTabbar()}>
+        <Icon icon="mdi:hamburger-menu" class="text-4xl cursor-pointer" />
+    </div>
 </div>
-<div class="h-full w-full absolute bg-neutral-700/0 z-10 fixed md:hidden p-navbar" on:click={() => closeTabbar()} on:keydown={() => closeTabbar()}>
+<div class="h-full w-full absolute bg-neutral-700/0 z-10 fixed md:hidden p-navbar" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
 
 </div>
 <div class="h-auto w-full absolute bg-black z-20 grid grid-cols-2 md:hidden p-navbar">
