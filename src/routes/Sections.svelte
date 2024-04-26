@@ -2,7 +2,7 @@
     import Icon from '@iconify/svelte';
     import Socials from './Socials.svelte';
 
-    let navDisp = 'none';
+    let navDisp: boolean = false;
 
 	let storedTab = localStorage.tabReIndex;
     /**
@@ -30,15 +30,33 @@
 	}
 
     const toggleTabbar = () => {
-        document.querySelectorAll('.p-navbar').forEach((nav) => {
-            nav.style.display = nav.style.display != 'none' ? 'none' : 'grid';
-        });
+        if(navDisp) {
+            // add new display
+            document.querySelector('.p-dismissal')?.classList.add('hidden');
+            document.querySelector('.p-navbar')?.classList.add('hidden');
+
+            // remove old display
+            document.querySelector('.p-dismissal')?.classList.remove('block');
+            document.querySelector('.p-navbar')?.classList.remove('grid');
+            
+            navDisp = false;
+        } else {
+            // add new display
+            document.querySelector('.p-dismissal')?.classList.add('block');
+            document.querySelector('.p-navbar')?.classList.add('grid');
+
+            // remove old display
+            document.querySelector('.p-dismissal')?.classList.remove('hidden');
+            document.querySelector('.p-navbar')?.classList.remove('hidden');
+
+            navDisp = true;
+        }
     }
     // https://svelte.dev/repl/cf05bd4a4ca14fb8ace8b6cdebbb58da?version=4.2.12
 </script>
 
 <div class="hidden md:block">
-    <nav class="w-auto mx-5 md:mx-0 hidden backdrop-blur-sm bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 md:flex rounded-lg md:w-8/12 text-gray-900 dark:text-white p-navbar justify-center">
+    <nav class="w-auto mx-5 md:mx-0 hidden backdrop-blur-sm bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 md:flex rounded-lg md:w-8/12 text-gray-900 dark:text-white justify-center">
         <ul class="mx-3 p-0 m-0 h-12 flex justify-center align-center list-none bg-contain">
             {#each tabs as tab}
             <li
@@ -58,15 +76,15 @@
     </nav>
 </div>
 
-<div class="flex items-center md:hidden h-14 bg-black/5 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3"  >
+<div class="flex items-center md:hidden h-14 bg-black/5 z-20 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3"  >
     <div on:click={() => toggleTabbar()}>
         <Icon icon="mdi:hamburger-menu" class="text-4xl cursor-pointer" />
     </div>
 </div>
-<div class="h-full w-full absolute bg-neutral-700/0 z-10 fixed md:hidden p-navbar" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
+<div class="hidden h-full w-full absolute bg-neutral-700/0 z-10 fixed md:hidden p-dismissal" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
 
 </div>
-<div class="h-auto w-full absolute bg-black z-20 grid grid-cols-2 md:hidden p-navbar">
+<div class="h-auto w-full absolute top-14 bg-black z-20 hidden grid-cols-2 md:hidden p-navbar">
     <nav>
         <ul>
             {#each tabs as tab}
