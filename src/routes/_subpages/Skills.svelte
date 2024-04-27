@@ -173,8 +173,8 @@
 </script>
 
 <section class="">
-	<h1 class="mx-8 mb-4 text-4xl font-semibold block md:hidden">Technologies</h1>
-    <div class="mx-8">
+	<h1 class="mx-8 mb-4 text-4xl font-semibold block md:hidden text-black/90 dark:text-white">Technologies</h1>
+    <div class="mx-5 md:mx-8">
     {#each techList as section}
         <span class="font-semibold text-xl text-black/90 dark:text-white/90">{section.section}</span>
         <br>
