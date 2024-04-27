@@ -1,6 +1,7 @@
 <script lang="ts">
     import Icon from '@iconify/svelte';
     import Socials from './Socials.svelte';
+	import { blur } from 'svelte/transition';
 
     let navDisp: boolean = false;
 
@@ -88,7 +89,7 @@
 <div class="backdrop-blur-md hidden h-full w-full absolute z-10 fixed md:hidden p-dismissal cursor-default" role="button" tabindex="0" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
 
 </div>
-<div class="h-auto w-full absolute top-14 bg-neutral-300 dark:bg-neutral-950 z-20 hidden py-5 grid-rows-1 md:hidden p-navbar gap-5  text-gray-900 dark:text-white border-solid border-b border-gray-400 dark:border-neutral-700/30">
+<div class="h-auto w-full absolute top-14 bg-neutral-300 dark:bg-neutral-950 z-20 hidden py-5 grid-rows-1 md:hidden p-navbar gap-5  text-gray-900 dark:text-white border-solid border-b border-gray-400 dark:border-neutral-700/30" transition:blur={{ amount: 10, duration: 300}}>
     <nav>
         <ul class="grid gap-3 grid-cols-2">
             {#each tabs as tab}

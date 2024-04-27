@@ -174,16 +174,16 @@
 
 <section class="">
 	<h1 class="mx-8 mb-4 text-4xl font-semibold block md:hidden text-black/90 dark:text-white">Technologies</h1>
-    <div class="mx-5 md:mx-8">
+    <div class="mx-8 md:mx-8">
     {#each techList as section}
         <span class="font-semibold text-xl text-black/90 dark:text-white/90">{section.section}</span>
         <br>
         <span class="text-base text-black/75 dark:text-white/75">{section.caption}</span>
         <br>
-        <div class="border dark:border-neutral-700/30 rounded-lg bg-black/10 dark:bg-black/40 inline-grid grid-flow-col auto-cols-max grid-rows-1 gap-4 px-4 mt-2">
+        <div class="border dark:border-neutral-700/30 rounded-lg bg-black/10 dark:bg-black/40 inline-grid grid-cols-3 md:grid-flow-col md:auto-cols-max grid-rows-auto md:grid-rows-1 gap-5 py-4 md:py-0 px-4 mt-4 md:mt-2">
             {#each section.tech as skill}
-            <div class="grid grid-cols-1 justify-items-center py-4 skill-icon" data-tippy-content={skill.alt} aria-label={skill.alt}>
-                <Icon icon={skill.icon} class="text-xl md:text-2xl dark:text-white text-black/80"></Icon>
+            <div class="grid grid-cols-1 justify-items-center md:py-4 skill-icon" data-tippy-content={skill.alt} aria-label={skill.alt}>
+                <Icon icon={skill.icon} class="text-3xl md:text-2xl dark:text-white text-black/80"></Icon>
             </div>
             {/each}
         </div>
