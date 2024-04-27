@@ -17,7 +17,7 @@ import ColorMode from '../ColorMode.svelte';
 		</div>
         <div class="flex flex-col-reverse md:flex-row mx-1">
             <div>
-                <h2 class="text-3xl font-semibold mb-2 text-white md:hidden">About Me</h2>
+                <h2 class="text-3xl font-semibold mb-2 text-black md:hidden dark:text-white">About Me</h2>
                 <p class="leading-7">In 2018, some friends and I started our first collaborative Python project on GitHub, and I've been self-learning and building in tech ever since. Recently, I've been most interested in
                     <a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="https://www.figma.com/">UI design with Figma</a>, 
                     <a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75  dark:text-white/60 dark:hover:text-white/50" href="https://nextjs.org/">web development with Next.js</a>, and 

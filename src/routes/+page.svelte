@@ -10,6 +10,7 @@
 	import SectionsMobile from './SectionsMobile.svelte';
 	import Socials from './Socials.svelte';
 	import Home from './_subpages/Home.svelte';
+    import ColorMode from './ColorMode.svelte';
 
 
 	// sections object
@@ -64,8 +65,9 @@
 				20 y/o computer engineer / student based in <span class="font-semibold">Cincinnati, OH</span>
 				<br>
 			</p>
-			<p class="text-right text-lg flex flex-row-reverse gap-2 my-1  text-black dark:text-white">
+			<p class="text-2xl text-right leading-none flex flex-row-reverse gap-2 my-1">
 				<Socials/>
+				<ColorMode/>
 			</p>
 		</div>
 	</div>
