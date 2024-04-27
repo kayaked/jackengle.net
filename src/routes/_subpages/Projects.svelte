@@ -43,11 +43,11 @@
 
 <section>
 	<h1 class="mx-8 mb-4 text-4xl font-semibold block md:hidden text-black/90 dark:text-white">Projects</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 px-6 md:px-3 gap-4 justify-between text-neutral-300">
+    <div class="flex flex-col md:grid md:grid-cols-2 px-6 md:px-3 gap-4 justify-between text-neutral-300">
 		{#each projectsList as project}
-		<a href={project.link}><div class="flex flex-col p-.7 transition duration-100 h-40 md:h-32 rounded-lg dark:bg-black/30 bg-black/10 hover:bg-black/20 dark:hover:bg-black/95 text-black dark:text-white">
+		<a href={project.link}><div class="flex flex-col p-.7 transition duration-100 md:h-32 rounded-lg dark:bg-black/30 bg-black/10 hover:bg-black/20 dark:hover:bg-black/95 text-black dark:text-white">
 			<h3 class="text-base font-semibold"><strong>{project.title}</strong></h3>
-			<p>{project.desc}</p>
+			<p class="mb-5">{project.desc}</p>
 			<div class="flex flex-row inline gap-2 mt-auto ml-1 mb-1">
 				{#each project.icons as iconID}
 					<Icon class="flex flex-row items-center" icon={iconID} />

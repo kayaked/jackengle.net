@@ -19,10 +19,10 @@
 
 {#if theme == "dark"}
 <div on:click={swapMode} on:keypress={undefined} aria-checked="true" aria-label="dark mode toggle" role="switch" tabindex="0" class="m-0 p-0">
-    <Icon icon="tdesign:fog-night" class="text-2xl dark:visible cursor-pointer text-black dark:text-white"/>
+    <Icon icon="tdesign:fog-night" class="dark:visible cursor-pointer text-black dark:text-white"/>
 </div>
 {:else}
 <div on:click={swapMode} on:keypress={undefined} class="m-0 p-0" aria-checked="true" aria-label="dark mode toggle" role="switch" tabindex="0">
-    <Icon icon="tdesign:fog-sunny" class="text-2xl visible cursor-pointer text-black dark:text-white"/>
+    <Icon icon="tdesign:fog-sunny" class="visible cursor-pointer text-black dark:text-white"/>
 </div>
 {/if}
