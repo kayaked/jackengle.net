@@ -80,15 +80,15 @@
     </nav>
 </div>
 
-<div class="flex items-center md:hidden h-14 bg-black/5 z-20 dark:bg-neutral-700/10 border-solid border border-gray-400 dark:border-neutral-700/30 p-3"  >
+<div class="flex items-center md:hidden h-14 bg-black/5 z-20 dark:bg-neutral-700/10 border-solid border-b border-gray-400 dark:border-neutral-700/30 p-3 text-gray-900 dark:text-white"  >
     <div on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()} role="button" tabindex="0">
         <Icon icon="mdi:hamburger-menu" class="text-4xl cursor-pointer" />
     </div>
 </div>
-<div class="hidden h-full w-full absolute z-10 fixed md:hidden p-dismissal cursor-default" role="button" tabindex="0" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
+<div class="backdrop-blur-md hidden h-full w-full absolute z-10 fixed md:hidden p-dismissal cursor-default" role="button" tabindex="0" on:click={() => toggleTabbar()} on:keydown={() => toggleTabbar()}>
 
 </div>
-<div class="h-auto w-full absolute top-14 bg-neutral-300 dark:bg-neutral-950 z-20 hidden py-5 grid-rows-1 md:hidden p-navbar gap-5">
+<div class="h-auto w-full absolute top-14 bg-neutral-300 dark:bg-neutral-950 z-20 hidden py-5 grid-rows-1 md:hidden p-navbar gap-5  text-gray-900 dark:text-white border-solid border-b border-gray-400 dark:border-neutral-700/30">
     <nav>
         <ul class="grid gap-3 grid-cols-2">
             {#each tabs as tab}
@@ -100,11 +100,11 @@
                     on:keydown={() => toggleTabbar()}
                     role="link"
                     tabindex="0"
-                    class="{tabActive === tab.label ? 'font-medium drop-shadow cursor-default' : 'font-normal hover:text-black dark:hover:text-white/80 cursor-pointer'} hover:drop-shadow flex h-full items-center px-[0.5rem] no-underline text-[1.2rem] justify-center"
+                    class="{tabActive === tab.label ? 'font-medium drop-shadow cursor-default' : 'font-normal hover:text-black dark:hover:text-white/80 cursor-pointer'} hover:drop-shadow flex h-full items-center px-[0.5rem] no-underline text-[1.4rem] justify-center"
                 >{tab.label}</span>
             </li>
             {/each}
-            <div class="flex justify-center">
+            <div class="flex justify-center items-center">
                 <div class="grid grid-flow-col auto-cols-max justify-items-center gap-3">
                     <Socials/>
                 </div>
