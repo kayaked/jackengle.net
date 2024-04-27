@@ -182,7 +182,7 @@
         <div class="border dark:border-neutral-700/30 rounded-lg bg-black/10 dark:bg-black/40 inline-grid grid-flow-col auto-cols-max grid-rows-1 gap-4 px-4 mt-2">
             {#each section.tech as skill}
             <div class="grid grid-cols-1 justify-items-center py-4 skill-icon" data-tippy-content={skill.alt} aria-label={skill.alt}>
-                <Icon icon={skill.icon} class="text-2xl dark:text-white text-black/80"></Icon>
+                <Icon icon={skill.icon} class="text-xl md:text-2xl dark:text-white text-black/80"></Icon>
             </div>
             {/each}
         </div>

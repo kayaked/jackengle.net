@@ -24,8 +24,8 @@
 </script>
 
 <section>
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-		<div class="px-6 py-2 md:p-0 md:col-span-2 mt-2">
+	<div class="mx-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+		<div class=" py-2 md:p-0 md:col-span-2 mt-2">
 			<div class="p-4 bg-black/25 dark:bg-black/25 rounded-lg dark:border dark:border-neutral-700/30">
 				<form method="POST" on:submit|preventDefault={submit}>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -33,7 +33,7 @@
 						<input required type="email" name="email" class="inline-block bg-white/50 dark:bg-white/5 p-3 rounded-lg text-black dark:text-white placeholder:text-black/60 dark:placeholder:text-white/75" placeholder="E-mail">
 					</div>
 					<textarea required name="message" class="w-full mt-4 bg-white/50 dark:bg-white/5 min-h-[15rem] rounded-lg p-3 text-black dark:text-white placeholder:text-black/60 dark:placeholder:text-white/75" placeholder="Message (Body)"></textarea>
-				<input type="submit" class="cursor-pointer p-3 mt-5 w-full border border-neutral-700/30 rounded-lg bg-black/70 text-white/80 dark:hover:text-white/90 hover:bg-black/90 hover:text-white" value="Send Message" />
+				<input type="submit" class="cursor-pointer p-5 mt-3 w-full rounded-lg bg-neutral-900/50 text-white/80 text-lg font-medium dark:hover:text-white/90 hover:bg-black/90 hover:text-white" value="Send Message" />
 				</form>
 			</div>
 			<div class="text-center w-full my-3 text-black/30 dark:text-white/30 text-sm">
@@ -53,7 +53,7 @@
 				<a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="https://www.linkedin.com/in/john--engle/">LinkedIn</a>, or follow me on 
 				<a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="https://github.com/kayaked">GitHub</a>.
 			</p>
-			<img src={dolly} class="max-w-64 md:max-w-full m-auto h-auto mt-3 rounded-lg brightness-75" alt="Dog"/>
+			<img src={dolly} class="max-w-64 md:max-w-full m-auto h-auto mt-5 rounded-lg brightness-75" alt="Dog"/>
 		</span>
 	</div>
 </section>
