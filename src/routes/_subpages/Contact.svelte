@@ -24,8 +24,9 @@
 </script>
 
 <section>
-	<div class="mx-8 grid grid-cols-1 md:grid-cols-3 gap-5">
-		<div class=" py-2 md:p-0 md:col-span-2 mt-2">
+	<h1 class="mx-8 mb-2 text-4xl font-semibold block md:hidden line-height-0">Contact Me</h1>
+	<div class="mx-6 grid grid-cols-1 md:grid-cols-3 gap-5">
+		<div class=" py-2 md:p-0 md:col-span-2">
 			<div class="p-4 bg-black/25 dark:bg-black/25 rounded-lg dark:border dark:border-neutral-700/30">
 				<form method="POST" on:submit|preventDefault={submit}>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -46,7 +47,7 @@
 				{/if}
 			</div>
 		</div>
-		<span class="text-black/80 dark:text-white/80 leading-7">
+		<span class="text-black/80 dark:text-white/80 leading-7 mx-4">
 			<p class="mb-2">Reach out by leaving a message!</p>
 			<p>Alternatively, you can email me at 
 				<a class="underline underline-offset-4 decoration-1 text-black/60 hover:text-black/75 dark:text-white/60 dark:hover:text-white/50" href="mailto:jackengle25@gmail.com">jackengle25@gmail.com</a>, connect with me on 

@@ -4,7 +4,7 @@ import prototype from '$lib/images/prototype.jpg';
 
 <section>
     <div class="mx-8 text-black/80 dark:text-white/80 text-base">
-        <h2 class="text-3xl font-semibold text-black dark:text-white/100">Welcome!</h2>
+        <h2 class="text-4xl font-semibold text-black dark:text-white/100">Welcome!</h2>
         <p class="my-3 leading-7">I'm Jack, a software / hardware engineer currently studying Computer Engineering at the University of Dayton. Currently based in <span class="text-black/90 dark:text-white/90 font-medium">northeast Cincinnati, Ohio</span> and working in Mason.</p>
         <div class="flex flex-col md:flex-row">
             <div>

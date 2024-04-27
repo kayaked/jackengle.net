@@ -115,6 +115,7 @@
 <br>
 {#each tabs as tab}
     {#if tabActive == tab.label}
+
     <div class="md:px-0 px-2">
         <svelte:component this={tab.component}/>
     </div>

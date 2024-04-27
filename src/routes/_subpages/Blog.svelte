@@ -5,6 +5,7 @@
 </script>
 
 <section>
+	<h1 class="mx-8 mb-4 text-4xl font-semibold block md:hidden line-height-0">Blog</h1>
     <div class="mx-8">
     {#if data.posts}
         {#each data.posts as post}
