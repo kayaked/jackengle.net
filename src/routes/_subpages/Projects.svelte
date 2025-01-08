@@ -33,7 +33,7 @@
 			link: 'https://github.com/kayaked/jackengle.net/'
 		},
 		{
-			title: 'Construktor (Coming Soon)',
+			title: '[Coming Soon]',
 			desc: 'Free online music poster designer 🎧',
 			icons: ['simple-icons:react', 'simple-icons:nextdotjs', 'simple-icons:typescript', 'simple-icons:unocss'],
 			link: ''
